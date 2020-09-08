@@ -6,7 +6,6 @@ const Login = () => {
     return (
        <div>
          <Nav/>
-         <div className="loggin">
             <style jsx>{`
                 .loggin {
                     display: flex;
@@ -33,6 +32,7 @@ const Login = () => {
                     font-size: 20px;
                 }
             `}</style>
+         <div className="loggin">
             <h1>Inicia Sesión</h1>
             <input type="text" name="user" id="" placeholder="Usuario"/>
             <input type="text" name="pass" id="" placeholder="Contraseña"/>

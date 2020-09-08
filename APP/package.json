@@ -7,10 +7,16 @@
     "build": "next build",
     "start": "next start"
   },
+  "proxy": "http://localhost:5000",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "dependencies": {
     "next": "9.5.3",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "@zeit/next-source-maps": "0.0.4-canary.1",
+    "react-hook-form": "^6.0.4"
   }
 }
