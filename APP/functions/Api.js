@@ -1,7 +1,7 @@
 import 'isomorphic-fetch';
 export class Api{
     static getApiUrl(){
-        return "http://localhost:3000/";
+        return "http://localhost:5000/";
     }
     //AUTH
     static authGet(token, url){

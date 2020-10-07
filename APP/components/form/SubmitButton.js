@@ -22,7 +22,7 @@ const SubmitButton = (props) => {
         }
     }
     return (
-        <button className={`button ${(props.style != undefined ? (props.style == "white" ? "white" : (props.style == "red" ? "red" : (props.style == "green" ? "green" : "green"))) : "green")} ${( props.shape == "circular" ? "circular" : "")}`} value={props.value} disabled={(props.disabled == true ? true : false)}>
+        <button className={`button ${(props.style != undefined ? (props.style == "white" ? "white" : (props.style == "purple" ? "purple" : (props.style == "green" ? "green" : "green"))) : "green")} ${( props.shape == "circular" ? "circular" : "")}`} value={props.value} disabled={(props.disabled == true ? true : false)}>
             <style jsx>{`
                 .button{
                     width: ${(props.width != undefined ? props.width : "fit-content")};
@@ -57,12 +57,12 @@ const SubmitButton = (props) => {
                 .green:hover{
                     background-color:#66766a;
                 }
-                .red{
-                    background-color: #e42719;
+                .purple{
+                    background-color: #3d1152;
                     color: #fff;
                 }
-                .red:hover{
-                    background-color: #b31f14;
+                .purple:hover{
+                    background-color: #782b9d;
                 }
                 .button.white{
                     color: #839788;

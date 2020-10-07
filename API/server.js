@@ -29,6 +29,14 @@ app.post('/users', (req, res) =>{
     UserController.newUser(req, res);
 })
 
+app.get('/users/:id([0-9]+)', (req, res) =>{
+    UserController.getUser(req, res);
+})
+
+app.put('/users/:id([0-9]+)', (req, res) =>{
+    UserController.editUser(req, res);
+})
+
 
 
 app.listen(5000, () => console.log("App listening on 5000 " + 5000));

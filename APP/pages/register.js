@@ -16,7 +16,7 @@ const formRef = React.useRef();
 const router = useRouter();
 
 const handleRegistrarseClick = (formData) =>{
-    let data = {nombre: formData.name, correo: formData.email, estado: formData.state, ciudad: formData.city, telefono: formData.tel, password: formData.password, tipoUsuario: formData.tipoUsuario }
+    let data = {nombre: formData.name, apellidos: formData.apellidos, correo: formData.email, estado: formData.state, ciudad: formData.city, telefono: formData.tel, password: formData.password, tipoUsuario: formData.tipoUsuario }
     fetch('http://localhost:5000/users', {
         method: 'POST', 
         body: JSON.stringify(data),
@@ -50,6 +50,7 @@ const handleRegistrarseClick = (formData) =>{
             <div className="form-register">
                 <Form ref={formRef} onSubmit={handleRegistrarseClick}>
                     <TextInput name="name" placeholder="Nombre" validations={[{type: "required"}]} margin="0 0 20px 0" width="300px"/>
+                    <TextInput name="apellidos" placeholder="Apellidos" validations={[{type: "required"}]} margin="0 0 20px 0" width="300px"/>
                     <TextInput name="email" placeholder="Email" validations={[{type: "required"}]} margin="0 0 20px 0" width="300px"/>
                     <TextInput name="state" placeholder="Estado" validations={[{type: "required"}]} margin="0 0 20px 0" width="300px"/>
                     <TextInput name="city" placeholder="Ciudad" validations={[{type: "required"}]} margin="0 0 20px 0" width="300px"/>

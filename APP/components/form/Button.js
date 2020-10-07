@@ -76,7 +76,7 @@ export class Button extends React.Component{
                     }
                     .button.purple{
                         color: #443E40;
-                        background-color: #EEE0CB;
+                        background-color: #3d1152;
                         border: 2px solid #EEE0CB;
                         font-size: 13px;
                     }

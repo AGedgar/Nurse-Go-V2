@@ -1,4 +1,5 @@
 const DBConnection = require('../DBConnection');
+const jwt = require('jsonwebtoken');
 
 class UserController{
     static newUser(req, res){
@@ -15,8 +16,8 @@ class UserController{
                 //                 .update('test')
                 //                 .digest('hex');
                 //                 console.log(hash)
-                DB.query(`INSERT INTO Usuario (nombre, correo, estado, ciudad, telefono, password, tipoUsuario) 
-                            VALUES (?,?,?,?,?,?,?)`,[body.nombre, body.correo, body.estado, body.ciudad, body.telefono, body.password, body.tipoUsuario]).then((queryRes) =>{
+                DB.query(`INSERT INTO Usuario (nombre, apellidos, correo, estado, ciudad, telefono, password, tipoUsuario) 
+                            VALUES (?,?,?,?,?,?,?,?)`,[body.nombre, body.apellidos, body.correo, body.estado, body.ciudad, body.telefono, body.password, body.tipoUsuario]).then((queryRes) =>{
                                 res.status(201).send({createdId: queryRes.rows.insertId})
                                 DB.close();
                             })
@@ -25,11 +26,11 @@ class UserController{
         }
 
         static getUser(req, res){
-            let body = req.body;
+            let id = req.params.id;
             let DB = new DBConnection();
 
-            DB.query(`SELECT nombre, correo, estado, ciudad, telefono, tipoUsuario FROM Usuario`).then((queryRes)=>{
-                if(queryRes.rows > 0){
+            DB.query(`SELECT nombre, apellidos, correo, estado, ciudad, telefono, tipoUsuario FROM Usuario WHERE id = ?`,[id]).then((queryRes)=>{
+                if(queryRes.rows.length > 0){
                     res.status(200).send({user: queryRes.rows[0]});
                     DB.close();
                 }else{
@@ -38,6 +39,20 @@ class UserController{
                 }
             })
         }
+
+        static editUser(req, res){
+            let id = req.params.id;
+            let body = req.body;
+            let DB = new DBConnection();
+
+            DB.query(`UPDATE Usuario SET nombre = ?, apellidos = ?, correo = ?, estado = ?, ciudad = ?, telefono = ? WHERE id = ?`,[body.nombre, body.apellidos, body.correo, body.estado, body.ciudad, body.telefono, id])
+                    .then((queryRes) =>{
+                        console.log(queryRes)
+                    res.status(200).send();
+                    DB.close();
+                    })
+         }
+        
 }
 
 

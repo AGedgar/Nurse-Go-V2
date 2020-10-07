@@ -7,6 +7,7 @@ import { PasswordInput } from '../components/form/PasswordInput';
 import { SubmitButton } from '../components/form/SubmitButton';
 import { Nav } from "../components/nav/Nav";
 import { Footer } from "../components/footer/footer";
+import { Api } from '../functions/Api';
 const jwt = require('jsonwebtoken');
 
 const Login = (props) => {
@@ -23,17 +24,28 @@ const Login = (props) => {
             }
           }).then((response) => {
             if(response.status == 200){
-                fetch(`http://localhost:5000/login${'?correo='+formData.correo}`)
-                .then(response => response.json())
-                .then(data => {
+                Api.get(`login?correo=${formData.correo}`).then((response) =>{
+                    let data = response.json;
+                    console.log(data)
                     document.cookie = `token=${data.token}; path=/`;
                     document.cookie = `nombre=${data.nombre}; path=/`;
                     if(data.tipoUsuario == "Paciente"){
-                        Router.push({pathname: '/perfil-paciente'});
+                        Router.push({pathname: `/perfil-paciente/${data.id}`});
                     }else{
-                        Router.push({pathname: '/perfil-enfermera'});
+                        Router.push({pathname: `/perfil-enfermera/${data.id}`});
                     }
-                });
+                })
+                // fetch(`http://localhost:5000/login${'?correo='+formData.correo}`)
+                // .then(response => response.json())
+                // .then(data => {
+                //     document.cookie = `token=${data.token}; path=/`;
+                //     document.cookie = `nombre=${data.nombre}; path=/`;
+                //     if(data.tipoUsuario == "Paciente"){
+                //         Router.push({pathname: '/perfil-paciente'});
+                //     }else{
+                //         Router.push({pathname: '/perfil-enfermera'});
+                //     }
+                // });
 
             }else{
                 setShowWrongCredentialsAlert(true);
@@ -180,7 +192,7 @@ export async function getServerSideProps(context) {
     if(token !== undefined){
         if(decoded.tipoUsuario == 'Paciente'){
             context.res.writeHead(302, {
-                Location: '/perfil-paciente'
+                Location: `/perfil-paciente/${decoded.id}/`
             });
             context.res.end();
         }else{

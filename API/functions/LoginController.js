@@ -29,7 +29,7 @@ class LoginController{
                 if(queryRes.rows.length > 0){
                     let data = queryRes.rows[0];
                     jwt.sign({ id: data.id, tipoUsuario: data.tipoUsuario, nombre: data.nombre }, "SecretKey2020", { algorithm: 'HS256' }, function(err, token) {
-                        res.status(200).send({token, nombre: `${data.nombre}`, tipoUsuario: data.tipoUsuario })
+                        res.status(200).send({id: data.id , token, nombre: `${data.nombre}`, tipoUsuario: data.tipoUsuario })
                     });
                     DB.close();
                 }else{
