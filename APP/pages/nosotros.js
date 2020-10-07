@@ -46,7 +46,7 @@ const Nosotros  = () => {
                         padding-top: 35px;
                     }
                     .mainNosotros p {
-                        font-size: 14px;
+                        font-size: 18px;
                         letter-spacing: 0.02px;
                         line-height: 23px;
                         text-align: center;
@@ -56,10 +56,10 @@ const Nosotros  = () => {
             <Nav/>
             <div className="imgNosotros">
                 
-            <h1>About Us</h1>
+            <h1>NOSOTROS</h1>
             </div>
             <div className="container">
-            <h1>About Nurse Go App</h1>
+            <h1>Acerca de Nurse Go</h1>
                 <div className="mainNosotros">
                     <p>Somos una empresa formada en 2020 por un grupo de ingenieros cuyo proposito es poner la tecnología y 
                     los servicios de enfermería a tu alcance.

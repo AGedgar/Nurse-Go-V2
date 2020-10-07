@@ -11,7 +11,7 @@ const Landing = () => {
                   
                   }
                   .landing{
-                    background-image: url(../../static/landImage.jpeg);
+                    background-image: url(images/landImage.jpeg);
                     background-position: center;
                     background-repeat: no-repeat;
                     background-size: cover;
@@ -25,7 +25,7 @@ const Landing = () => {
                     z-index: 2;
                     margin-top: 8%;
                     font-size: 50px;
-                    color: rgb(61, 59, 59);
+                    color: #342c2c;
                   }
                   
                   .imgLandInfo{
@@ -56,16 +56,17 @@ const Landing = () => {
                 <img src='images/imgLandInfo.png' alt="movil" width="200px" />
             </div>
             <div className="landInfo">
-                <p>BETTER FOR <br />PACIENTS</p>
-                <p>BETTER FOR <br />NURSES</p>
+                <p>LO MEJOR PARA <br />PACIENTES</p>
+                <p>LO MEJOR PARA <br />ENFERMERA(O)S</p>
             </div>
         </div>
         <section className="sections-center">
-                We are a company formed by nursing,<br /> healthcare, and technology<br /> professionals who are constantly<br /> looking for ways to improve the<br /> healthcare system.        </section>
-            <section className="sections-imgInfo">
+                Somos una compañia formada por profesionales<br/> de la salud y tecnología que constantemente estamos buscando<br/> maneras de improvisar el sistema de salud.
+         </section>
+         <section className="sections-imgInfo">
                 <p>
-                    The Go RN Platform is the solution to<br /> meet increased demand for all healthcare<br />facilities<br /><br />
-              Staffing a hospital is a difficult and constant challenge. Finding the<br /> right staff at the last minute – and having them arrive in time for<br /> the shift – is a costly and time consuming process. Our platform<br /> reduces the uncertainty, cost, and time involved to get registry<br /> nurses on shift.
+                    La plataforma Nurse Go es la solucion <br/> para la creciente demanda del sistema de salud.<br/><br/>
+                    La selección de enfermera(o)s es un desafío, ya que se debe investigar<br/> al personal de salud que mas accesible sea para nosotros y eso es algo que consume<br/> tiempo. Nuestra plataforma ayuda a que el proceso de contratación de un servicio <br/> médico sea mas rápido y con los costos que se adapten a ti.
             </p>
                 <img src="images/section1Landing.png" alt="" height="250px" />
             </section>
@@ -73,8 +74,8 @@ const Landing = () => {
             <section className="sections-imgInfo">
                 <img src="images/section2Landing.png" alt="" height="250px" />
                 <p>
-                    Filling vacancies has never been easier!<br /> <br />
-            We are finding better ways for healthcare facilities to staff<br />  on demand, schedule, and maximize patient experience. The Go RN<br />  platform aims to cut costs up to 30% for healthcare facilities while<br />  increasing the average registry salary by up to 25%.
+                    Contratar un servicio de enfermeria nunca había sido tan fácil!<br /> <br />
+                    Estamos encontrando mejores maneras para que nuestros profesionistas<br /> maximicen la experiencia del paciente. La plataforma<br />  Nurse Go apunta a reducir el tiempo de contratación de un servicio de enfermería<br />  y tener un catalogo de precios que pueda favorecer al paciente.
              </p>
             </section>
             <Footer/>

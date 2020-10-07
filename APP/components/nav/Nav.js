@@ -7,6 +7,7 @@ const Nav = () =>{
             .containerNav{
                 left: 35%;
                 border-color: black;
+                background-color: #fdfdfd;
             }
             .nav{
                 overflow: hidden; 
@@ -33,8 +34,6 @@ const Nav = () =>{
             <div className="nav">
             <ol><a href="/">Inicio</a></ol>
             <ol><a href="/nosotros">Nosotros</a></ol>
-            <ol><a href="/blog">Blog</a></ol>
-            <ol><a href="/contacto">Contacto</a></ol>
             <ol><a href="/login">Inicia Sesión</a></ol>
             <ol><a href="/register">Registrate</a></ol>
             </div>

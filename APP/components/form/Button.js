@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 export class Button extends React.Component{
     constructor(props){
@@ -89,15 +88,4 @@ export class Button extends React.Component{
             </div>
         )   
     }
-}
-Button.defaultProps = {width: 'fit-content', height: '35px', margin:'0px', style:"green"}
-Button.propTypes = {
-    width: PropTypes.string,
-    height: PropTypes.string, 
-    margin: PropTypes.string,
-    style: PropTypes.string,
-    shape: PropTypes.string,
-    icon: PropTypes.string,
-    children: PropTypes.any,
-    onClick: PropTypes.func
 }
