@@ -10,15 +10,13 @@ const Nav = () =>{
                 background-color: #fdfdfd;
             }
             .nav{
-                overflow: hidden; 
-                
+                overflow: hidden;                 
                 display: flex;
                 justify-content: space-evenly;
                 align-items: center;
                 margin-right: 30px;
                 font-size: 16px;
-                height: 10vh;
-                
+                height: 10vh;                
                 width: 100%;
             }
             
@@ -29,6 +27,12 @@ const Nav = () =>{
             
             .nav a:hover{
                 color: black;
+            }
+            @media  (max-width: 426px) {
+                font-size: 12px;
+            }
+            @media  (max-width: 321px) {
+                font-size: 10px;
             }
           `}</style>
             <div className="nav">

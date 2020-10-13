@@ -51,6 +51,29 @@ const Nosotros  = () => {
                         line-height: 23px;
                         text-align: center;
                     }
+                
+                    @media  (max-width: 769px) {
+                        .imgNosotros h1{
+                            font-size: 30px;
+                        }
+                        h1{
+                            font-size: 30px;
+                        }
+                        .mainNosotros{
+                            padding-top: 25px;
+                        }
+                        .mainNosotros p {
+                            font-size: 14px;
+                        }
+                    }
+                    @media (max-width: 426px) {
+                        .imgNosotros h1{
+                            font-size: 25px;
+                        }
+                        h1 {
+                            font-size: 20px;
+                        }
+                    }
                    
             `}</style>
             <Nav/>
